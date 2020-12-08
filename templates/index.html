@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{ appname }}
+      </h1>
+      <p>
+        {{ content | safe }}
+      </p>
+      <form action="/add/message" id="newmessageform" method="POST">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input id="username" name="username" class="input" type="text" placeholder="e.g Alex Smith">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea id="msgtxt" name="msgtxt" class="textarea is-primary" placeholder="Primary textarea"></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button type="submit" class="button is-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+      <form action="/remove/message" id="newmessageform" method="POST">
+        <div class="field">
+          <label class="label">ID</label>
+          <div class="control">
+            <input id="id" name="id" class="input" type="text" placeholder="message ID">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button type="submit" class="button is-primary">Remove</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+  </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+</html>
